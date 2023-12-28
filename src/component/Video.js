@@ -1,25 +1,41 @@
 import './Video.css'
 
-function Video({title , combo}) {   //We would have written props and used it by props.title , props.img but its not a good way
-    let bg = 'ReactTut'
-    console.log(title);
+function Video({title , views , time , img , channel , varified , id}) {   //We would have written props and used it by props.title , props.img but its not a good way
+  
+    // let channelJSX;
+    // if(varified){ channelJSX = <div className={channel}> {channel}<span>&#10003;</span></div> }
+    // else {  channelJSX = <div className={channel}> {channel} </div> }
+    
+    
     return(
-        <> 
-
-       <div className='pic'>
-        <img src={combo.img} alt="Katherine Johnson" />
+        <>
+        <div className='container'>
+            
+        <div>
+         <img src={`https://picsum.photos/180/120/?blur=${id}`} alt="Katherine Johnson" />
         </div>
-        <div className={bg} style={{backgroundColor : combo.bgColor , margin : "10px 0px",width : '20rem'}}>
+
+        <div className={title} >
             {title}
-       </div>
+        </div>
+
+        {/* {varified ? <div className={channel}> {channel}<span>&#10003;</span> </div> : <div className={channel}> {channel}</div>} */}
+        {/* or */}
+        {/* <div className={channel}> {channel} {varified ? <span>&#10003;</span> : null} </div> */}
+        {/* or */}
+        <div className={channel}> {channel} {varified && <span>&#10003;</span>} </div>
 
 
+        
+        <div className={views}> 
+        {views} <span>.</span> {time}
+        </div>
+
+
+        </div>   
         </>
         )
     }
 
-export {Video};
 
-// combo k andar do cheezen thi issiliye combo.img , combo.bgColor
-// ye sab alg alg tareeke hain choose anyone
-// https://react.dev/learn/passing-props-to-a-component
+export {Video};
