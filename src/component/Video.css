@@ -4,13 +4,17 @@
 }
 
 .container{
-    width:15em;
-    margin: 0 0.2em;
-    float: left;
+  width:15em;
+  margin: 0 0.2em;
+  float: left;
 }
-  .pic img{
+.image img{
+  width : "16px";
+  height : "9px";
+}
+  /* .pic img{
     width: 100%;
-  }
+  } */
   .title{
     font-weight: bold;
     margin-bottom: 1em;
