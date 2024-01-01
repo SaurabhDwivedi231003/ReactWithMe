@@ -1,7 +1,7 @@
 import './Video.css'
 
 function Video({ title, views, time, img, channel, varified, id , children}) {
-
+        // console.log("Video");
     return (
         <> 
         < div className = 'container' > 
