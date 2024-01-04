@@ -1,28 +1,23 @@
 import React, {useState} from 'react'
 import './AddVideo.css'
-import {Video} from './Video'
 
+//Yaha 'AddVideo' se data leke parent 'App' ko bhj rhe then , Parent se dusre sibling 'Videolist' ko bghhj rhe to diaplay data 
 
-// Yha pe hume state Uplifting krni h , mtlb yha form se data leke video componenet me bhjna
-// CHILD TO PARENT
-
-// from 4:13:00
-
-function AddVideo({setVideosProp}) {    // passing function as a props for handling submit.
+function AddVideo({setVideosProp}) {
 
     const setInitialState = {time: "1 month ago", channel: "XYZ Blogs", varified: true ,title:'' , views:''}
 
-    const [video, setVideo] = useState(setInitialState);   // ye default values hain state k liye
+    const [video, setVideo] = useState(setInitialState); 
 
 
     function handleSubmit(e) {
         e.preventDefault();
-        setVideosProp(video); // ye function as a prop aa rha h App.js se taki , main video me sara change ho ske
-        setVideo(setInitialState); // set video function of the state mentioned above
+        setVideosProp(video);     //ye App.js se aya h data save krne k liye 
+        setVideo(setInitialState); 
     }
 
     function handleChange(e) {
-        setVideo({ ...video, [e.target.name]: e.target.value })  // ye sara changes lelega input name k according 
+        setVideo({ ...video, [e.target.name]: e.target.value })  
     }
 
     return (
@@ -41,11 +36,3 @@ function AddVideo({setVideosProp}) {    // passing function as a props for handl
 
 export default AddVideo;
 
-// steps
-// 1. Phle input banao aur handle change se data lo.
-// 2. Submit bnao aur handleSubmit function se data submit kro
-// 3. video , setVideo state banao , aur kuch initial values dedo kuuki yha hum sirf title , views input krwa rhe user se aur 
-//      baki value hum default de rhe.
-// 4. Ab kuuki hum chahte hain ye data parent compononet yha video me jye toh waha pe hum "addVideos" naam ka function bnayege
-//     aur "addVideos" naam k fucntion ko 'setVideoProp' naam k prop me se paas krdege.
-// 5. Last me HandleSubmit k andar "setVideosProp(video)" ye krne se sare changes ho jyege hamare.
