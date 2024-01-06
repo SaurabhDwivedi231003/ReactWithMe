@@ -4,7 +4,7 @@ function Video({title,id,channel,views,time,verified,children,deleteVideo,editVi
   console.log('render Video')
 
   
-  return (
+  return ( 
       <>
       <div className='container'>
       <button className='close' onClick={()=>deleteVideo(id)}>X</button>  

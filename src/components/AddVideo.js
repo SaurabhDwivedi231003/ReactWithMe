@@ -10,19 +10,22 @@ const initialState = {
   }
 
 function AddVideo({addVideos,updateVideo,editableVideo}) {
+
+
   const [video, setVideo] = useState(initialState);
 
   function handleSubmit(e) {
     e.preventDefault();
+
     if(editableVideo){
       updateVideo(video)
     }else{
       addVideos(video)
     }
     
-    setVideo(initialState)
-
+    setVideo(initialState);
   }
+
   function handleChange(e) {
     setVideo({...video,
         [e.target.name] : e.target.value
@@ -31,7 +34,7 @@ function AddVideo({addVideos,updateVideo,editableVideo}) {
 
   useEffect(()=>{
     if(editableVideo){
-      setVideo(editableVideo)
+      setVideo(editableVideo) 
     }
   },[editableVideo])
 
@@ -46,7 +49,7 @@ function AddVideo({addVideos,updateVideo,editableVideo}) {
       />
       <input
         type="text"
-        name="views"
+        name="views" 
         onChange={handleChange}
         placeholder="views"
         value={video.views}

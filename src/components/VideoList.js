@@ -7,7 +7,7 @@ function VideoList({videos,deleteVideo,editVideo}){
         <>
         {videos.map((video) => (
             <Video
-              key={video.id}
+              key={video.id}  
               title={video.title}
               views={video.views}
               time={video.time}
